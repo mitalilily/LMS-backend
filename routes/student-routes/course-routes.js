@@ -1,15 +1,12 @@
 const express = require("express");
 
 const {
-  getStudentViewCourseDetails,
-  getAllStudentViewCourses,
-  checkCoursePurchaseInfo,
+  getCoursesByStudentId,
 } = require("../../controllers/student-controller/student-courses-controller");
 
 const router = express.Router();
 
-router.get("/get", getAllStudentViewCourses);
-router.get("/get/details/:id", getStudentViewCourseDetails);
-router.get("/purchase-info/:id/:studentId", checkCoursePurchaseInfo);
+// Get courses purchased by a student
+router.get("/get/:studentId", getCoursesByStudentId);
 
 module.exports = router;
